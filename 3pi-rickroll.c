@@ -52,7 +52,7 @@ int main() {
 
   clear();
 
-	TCCR0B = 0x2; // timer 0 clock select FCPU / 8
+  TCCR0B = 0x2; // timer 0 clock select FCPU / 8
 
 
   while(1) {
@@ -66,7 +66,7 @@ int main() {
 
     play_from_program_space(music);
 
-  	TIFR0 |= 0xFF;          // clear any pending t1 overflow int.
+    TIFR0 |= 0xFF;          // clear any pending t1 overflow int.
     TIMSK0 = (1 << TOIE0);  // enable interrupt
 
     set_motors(left_motor_speed[0], right_motor_speed[0]);
